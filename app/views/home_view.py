@@ -126,22 +126,10 @@ class HomeView(ttk.Frame):
             ttk.Entry(pack_frame, textvariable=var).grid(
                 row=i, column=1, sticky="ew", padx=left_padding, pady=short_padding
             )
-
-        ttk.Label(
-            pack_frame,
-            text="Packed Output (RGBA) file name",
-            anchor="w",
-            wraplength=600,
-        ).grid(row=6, column=0, sticky="ew", pady=short_padding)
-
-        self.pack_path_name = tk.StringVar()
-        ttk.Entry(pack_frame, textvariable=self.pack_path_name).grid(
-            row=6, column=1, sticky="ew", padx=left_padding, pady=short_padding
-        )
-
+            
         # Pack button
         ttk.Button(pack_frame, text="Pack", command=self.pack_channels).grid(
-            row=7, column=0, columnspan=2, sticky="ew", pady=tall_padding
+            row=6, column=0, columnspan=2, sticky="ew", pady=tall_padding
         )
 
         # ---------------- Output log ----------------
@@ -216,8 +204,13 @@ class HomeView(ttk.Frame):
             self.log("Please select all 4 channel files before packing")
             return
 
-        if not self.pack_path_name.get():
-            self.log("Please enter an output file name")
+        file_path = filedialog.asksaveasfilename(
+            title=f"Select output (RGBA) file name file",
+            filetypes=[("PNG files", "*.png")],
+        )
+
+        if not file_path:
+            self.log("No file selected for packing")
             return
 
         try:
@@ -234,7 +227,7 @@ class HomeView(ttk.Frame):
 
             # Merge into a single RGBA image
             merged = Image.merge("RGBA", channels)
-            output_file = Path(self.pack_path_name.get()).with_suffix(".png")
+            output_file = Path(file_path).with_suffix(".png")
 
             merged.save(output_file)
             self.log(f"Packed channels into {output_file}!")
