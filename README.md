@@ -4,9 +4,9 @@
 
 ## Downloads
 
-[![Download Linux](https://img.shields.io/badge/Download-Linux-blue?logo=linux)](https://github.com/<username>/texture-packer/releases/latest)
-[![Download Windows](https://img.shields.io/badge/Download-Windows-brightgreen?logo=windows)](https://github.com/<username>/texture-packer/releases/latest)
-[![Download macOS](https://img.shields.io/badge/Download-macOS-lightgrey?logo=apple)](https://github.com/<username>/texture-packer/releases/latest)
+[![Download Linux](https://img.shields.io/badge/Download-Linux-blue?logo=linux)](https://github.com/jeremy-mccarty/texture-packer/releases/latest)
+[![Download Windows](https://img.shields.io/badge/Download-Windows-brightgreen?logo=windows)](https://github.com/jeremy-mccarty/texture-packer/releases/latest)
+[![Download macOS](https://img.shields.io/badge/Download-macOS-lightgrey?logo=apple)](https://github.com/jeremy-mccarty/texture-packer/releases/latest)
 
 Pack and unpack RGBA texture channels easily across Linux, Windows, and macOS.
 
