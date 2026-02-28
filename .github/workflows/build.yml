@@ -5,6 +5,9 @@ on:
     tags:
       - 'v*'  # Trigger on version tags like v1.0.6
 
+permissions:
+  contents: write
+
 jobs:
   build:
     name: Build on ${{ matrix.os }}
@@ -132,4 +135,4 @@ jobs:
           name: CSV→JSON Release ${{ github.ref_name }}
           body: Automated release including Linux AppImage, Windows .exe, and macOS binary
           artifacts: release/*
-          token: ${{ secrets.GH_PAT }} # Fine-grained token with Contents: Read & Write + Actions: Read & Write
+          token: ${{ secrets.GITHUB_TOKEN }}
