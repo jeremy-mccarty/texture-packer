@@ -132,7 +132,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           tag: ${{ github.ref_name }}
-          name: CSV→JSON Release ${{ github.ref_name }}
+          name: Texture Packer ${{ github.ref_name }}
           body: Automated release including Linux AppImage, Windows .exe, and macOS binary
           artifacts: release/*
           token: ${{ secrets.GITHUB_TOKEN }}
