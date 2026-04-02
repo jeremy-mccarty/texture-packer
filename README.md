@@ -12,6 +12,8 @@ Pack and unpack RGBA texture channels easily across Linux, Windows, and macOS.
 
 # Texture Packer
 
+![Texture Packer screenshot](assets/screenshot.png)
+
 A simple Python application to **pack and unpack RGBA texture channels**, built with `CustomTkinter` and `Pillow`.
 
 This tool allows you to:

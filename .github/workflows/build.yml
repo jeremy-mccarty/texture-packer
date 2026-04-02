@@ -65,7 +65,7 @@ jobs:
 
           # Icon from repo
           mkdir -p AppDir/usr/share/icons/hicolor/256x256/apps
-          cp assets/TexturePacker.png AppDir/usr/share/icons/hicolor/256x256/apps/
+          cp assets/icon.png AppDir/usr/share/icons/hicolor/256x256/apps/TexturePacker.png
 
           # Download linuxdeploy
           wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
