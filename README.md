@@ -12,7 +12,7 @@ Pack and unpack RGBA texture channels easily across Linux, Windows, and macOS.
 
 # Texture Packer
 
-A simple Python application to **pack and unpack RGBA texture channels**, built with `Tkinter` and `Pillow`.
+A simple Python application to **pack and unpack RGBA texture channels**, built with `CustomTkinter` and `Pillow`.
 
 This tool allows you to:
 
@@ -26,17 +26,19 @@ This tool allows you to:
 
 * Split RGBA images into individual channel images.
 * Merge R, G, B, and A grayscale images into a single RGBA texture.
+* Drag and drop support on all input fields.
+* Choose an output directory when unpacking or packing.
 * Automatic channel filename generation.
 * Image dimension validation before packing.
-* Output log with timestamps.
-* Clean and responsive Tkinter UI.
+* Output log with timestamps and color-coded status messages.
+* Dark-themed UI built with CustomTkinter.
 * Works on Windows, Linux, and macOS.
 
 ---
 
 ## Using the Executable
 
-- Download the latest release for your OS from the [Releases page](https://github.com/<username>/texture-packer/releases).  
+- Download the latest release for your OS from the [Releases page](https://github.com/jeremy-mccarty/texture-packer/releases).
 - Run the executable — no Python installation required.
 
 ---
@@ -45,17 +47,17 @@ This tool allows you to:
 
 ### Unpacking Channels
 
-1. Click **Select Input Path** under *Unpack Input*.
-2. Review or adjust the generated channel filenames.
-3. Click **Unpack**.
+1. Click **Select Input** or drag and drop a `.png` file onto the input field.
+2. Click **Unpack Channels**.
+3. Select the directory to save the output files into.
 4. The R, G, B, and A channel images will be saved individually.
 
 ### Packing Channels
 
-1. Select the R, G, B, and A grayscale images.
-2. Enter a name for the output RGBA texture.
-3. Click **Pack**.
-4. The merged texture will be saved as a `.png`.
+1. Click **Browse** or drag and drop a `.png` onto each of the R, G, B, and A channel fields.
+2. Click **Pack into RGBA**.
+3. Select the directory to save the output file into.
+4. The merged RGBA texture will be saved as a `.png`.
 
 Check the **Output Log** for status messages and errors.
 
@@ -66,7 +68,7 @@ Check the **Output Log** for status messages and errors.
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/<username>/texture-packer.git
+git clone https://github.com/jeremy-mccarty/texture-packer.git
 cd texture-packer
 ```
 
@@ -101,7 +103,7 @@ pip install -r requirements.txt
 With the virtual environment active:
 
 ```bash
-python app/main.py
+python -m app.main
 ```
 
 ---
@@ -122,9 +124,9 @@ The executable will be located in the `dist` folder.
 
 Whenever a tag like `v1.0.0` is pushed, GitHub Actions will:
 
-1. Build standalone executables for Windows, macOS, and Linux.  
-2. Upload them as artifacts.  
-3. Create a GitHub release with the executables attached.  
+1. Build standalone executables for Windows, macOS, and Linux.
+2. Upload them as artifacts.
+3. Create a GitHub release with the executables attached.
 
 The badge above reflects the **latest workflow status**.
 
