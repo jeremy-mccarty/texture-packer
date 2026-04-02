@@ -37,6 +37,7 @@ PYINSTALLER_ARGS = [
     "--onefile",
     f"--name={APP_NAME}",
     "--paths", os.path.join(BASE_DIR, "app"),  # ensures package imports work
+    "--collect-all", "tkinterdnd2",
     ENTRY_POINT
 ]
 
@@ -88,7 +89,7 @@ Categories=Utility;
     # Icon
     icon_dir = os.path.join(APP_DIR, "usr/share/icons/hicolor/256x256/apps")
     os.makedirs(icon_dir, exist_ok=True)
-    shutil.copy(os.path.join(BASE_DIR, "assets", f"{APP_NAME}.png"), icon_dir)
+    shutil.copy(os.path.join(BASE_DIR, "assets", f"icon.png"), icon_dir)
 
     # Build AppImage
     print("Downloading linuxdeploy AppImage...")
