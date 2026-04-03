@@ -347,8 +347,8 @@ class HomeView(ctk.CTkFrame):
                     self.unpack_thumbs[channel].configure(
                         image=self._make_thumb(band), text="",
                     )
-        except Exception:
-            pass
+        except Exception as e:
+            self.log(f"Preview error: {e}", "err")
 
     def _load_pack_path(self, channel: str, file_path: str):
         self.pack_path_inputs[channel].set(file_path)
@@ -359,8 +359,8 @@ class HomeView(ctk.CTkFrame):
                 self.pack_thumbs[channel].configure(
                     image=self._make_thumb(img), text="",
                 )
-        except Exception:
-            pass
+        except Exception as e:
+            self.log(f"Preview error: {e}", "err")
 
         self._update_pack_preview()
 
@@ -400,8 +400,8 @@ class HomeView(ctk.CTkFrame):
             self.pack_preview.configure(
                 image=self._make_preview(composite), text="",
             )
-        except Exception:
-            pass
+        except Exception as e:
+            self.log(f"Preview error: {e}", "err")
 
     # ── Actions ───────────────────────────────────────────────────────────────
 
