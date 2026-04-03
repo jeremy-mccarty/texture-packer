@@ -48,7 +48,7 @@ jobs:
       - name: Build Linux AppImage
         if: runner.os == 'Linux'
         run: |
-          pyinstaller --noconfirm --onefile --name TexturePacker --paths app --collect-all tkinterdnd2 app/main.py
+          pyinstaller --noconfirm --onefile --name TexturePacker --paths app --collect-all tkinterdnd2 --collect-all customtkinter app/main.py
 
           # AppDir structure
           mkdir -p AppDir/usr/bin
@@ -79,7 +79,7 @@ jobs:
       - name: Build Windows executable
         if: runner.os == 'Windows'
         run: |
-          pyinstaller --noconfirm --onefile --name TexturePacker --paths app --collect-all tkinterdnd2 app/main.py
+          pyinstaller --noconfirm --onefile --name TexturePacker --paths app --collect-all tkinterdnd2 --collect-all customtkinter app/main.py
           copy dist\TexturePacker.exe release\TexturePacker-Windows.exe
         shell: powershell
 
@@ -87,7 +87,7 @@ jobs:
       - name: Build macOS executable
         if: runner.os == 'macOS'
         run: |
-          pyinstaller --noconfirm --onefile --name TexturePacker --paths app --collect-all tkinterdnd2 app/main.py
+          pyinstaller --noconfirm --onefile --name TexturePacker --paths app --collect-all tkinterdnd2 --collect-all customtkinter app/main.py
           cp dist/TexturePacker release/TexturePacker-macOS
 
       # ---------------- Upload artifact ----------------
